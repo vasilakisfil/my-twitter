@@ -1,2 +1,2 @@
-require 'my_twitter'
-run MyTwitter
+require 'my_app'
+run MyApp
