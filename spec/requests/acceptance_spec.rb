@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'json'
 
 RSpec.configure do |config|
   config.include Capybara::DSL
@@ -7,16 +8,23 @@ end
 
 Capybara.app = MyApp
 
-describe "In the main page" do
+feature "Tweets" do
   before(:each) do
-    puts "Hello World"
-    visit '/test'
+    twitter_helper = double
+    HelperUtils::TwitterHelper.stub(:new).and_return(twitter_helper)
+    # bad style ?
+    twitter_helper.stub(:my_timeline).and_return
+    (
+      JSON.parse(File.read("spec/fixtures/user_timeline.json"))
+    )
   end
 
-  it "tweets are shown" do
-    p page
-    expect(page).to have_content "Hello"
-    expect(page).to have_content "World"
-    expect(page).not_to have_content "asjdghajsdhgajsdhgajsdghajdsh"
+  scenario "Tweets are shown in main page" do
+    visit '/'
+    expect(page).to have_content("Introducing the Twitter Certified
+                                 Products Program: https://t.co/MjJ8xAnT")
+    expect(page).to have_content("we are working to resolve issues with
+                                 application management &amp; logging in to
+                                 the dev portal: https://t.co/p5bozh0k ^ts",
   end
 end

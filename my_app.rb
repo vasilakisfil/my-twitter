@@ -1,39 +1,53 @@
 require 'sinatra'
+require_relative 'helpers'
 require 'slim'
 require 'twitter'
-
+require 'json'
+require 'sinatra/assetpack'
 
 
 class MyApp < Sinatra::Base
-=begin
-  Twitter.configure do |config|
-    config.consumer_key        = "KgormCyO26dvrdUhooeMdw"
-    config.consumer_secret     = "We7NbbWoVpqLU0yX2cjaoqnbPUEnA2rl4wTXMO7Ilc4"
+  register Sinatra::AssetPack
+
+  set :slim, :pretty => true
+
+  assets do
+    serve '/js', :from => 'assets/javascript'
+
+    js :foundation, [
+      '/js/foundation/foundation.js',
+      '/js/foundation/foundation.*.js'
+    ]
+
+    js :application, [
+      '/js/vendor/*.js',
+      'js/app.js'
+    ]
+
+    serve '/css', :from => 'assets/css'
+    css :application, [
+      '/css/normalize.css',
+      '/css/app.css'
+    ]
+
+    js_compression :jsmin
+    css_compression :sass
   end
 
-  @my_twitter = Twitter::Client.new(
-    :oauth_token        => ENV['OAUTH_TOKEN'],
-    :oauth_token_secret => ENV['OAUTH_TOKEN_SECRET']
-  )
+
 
   before do
-    @my_timeline = Twitter.user_timeline("vasilakisfil")
-    @my_user = Twitter.user("vasilakisfil")
-    p @my_user.description
+    #@twitter_helper = HelperUtils::TwitterHelper.new
   end
 
   get '/' do
-    @test_var = "Random Test"
+    #@timeline = @twitter_helper.my_timeline
+    @timeline = JSON.parse(File.read("spec/fixtures/user_timeline.json"))
     slim :index
   end
 
   get '/about' do
     "Hello world"
-  end
-
-=end
-  get '/test' do
-    slim :test
   end
 
   run! if app_file == $0
