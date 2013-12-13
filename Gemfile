@@ -10,6 +10,7 @@ group :test do
   gem 'capybara'
 end
 
+gem 'highland'
 gem 'sinatra-assetpack'
 gem 'sinatra'
 gem 'slim'
