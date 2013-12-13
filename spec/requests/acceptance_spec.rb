@@ -25,6 +25,6 @@ feature "Tweets" do
                                  Products Program: https://t.co/MjJ8xAnT")
     expect(page).to have_content("we are working to resolve issues with
                                  application management &amp; logging in to
-                                 the dev portal: https://t.co/p5bozh0k ^ts",
+                                 the dev portal: https://t.co/p5bozh0k ^ts")
   end
 end
