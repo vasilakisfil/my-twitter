@@ -22,34 +22,45 @@ module TwitterHelper
 
   class DataFetcher
     def initialize(twitter_client)
-      Timeline.clear
+      UserTimeline.clear
       @client = twitter_client
     end
 
-    def timeline
-      @client.user_timeline("vasilakisfil")
-    end
-
-    def timeline_text
-      text = ""
+    def user_timeline
       @client.user_timeline("vasilakisfil").each do |tweet|
-        text << tweet.text
-        text << "\n"
+        UserTimeline.create(create_at: tweet.created_at, text: tweet.text)
       end
-      return text
     end
 
+    def user_show
+      User.create(
+        screen_name: @client.user('vasilakisfil').screen_name,
+        name: @client.user('vasilakisfil').name,
+        description: @client.user('vasilakisfil').description,
+        statuses_count: @client.user('vasilakisfil').statuses_count,
+        friends_count: @client.user('vasilakisfil').friends_count,
+        followers_count: @client.user('vasilakisfil').followers_count
+      )
+    end
   end
 
   class DataRetriever
-    def initilize
+    def initialize(twitter_client)
+      @client = twitter_client
     end
 
-    def timeline
+    def user_timeline
+      User.all
     end
   end
 end
 
 set_up = TwitterHelper::SetUp.new('vasilakisfil')
-data_fetcher = TwitterHelper::DataFetcher.new(set_up.client)
-puts data_fetcher.timeline_text
+#data_fetcher = TwitterHelper::DataFetcher.new(set_up.client)
+#puts data_fetcher.timeline_text
+#data_fetcher.user_show
+#data_fetcher.user_timeline
+data_retriever = TwitterHelper::DataRetriever.new(set_up.client)
+#p data_retriever.user_timeline
+data =  data_retriever.user_timeline
+p data

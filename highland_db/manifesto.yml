@@ -1,7 +1,7 @@
 collections:
   #Timelines are collections of Tweets, ordered with the most recent first.
-  - Timeline
+  - UserTimeline
   # Tweets are the atomic building blocks of Twitter, 140-character status
   # updates with additional associated metadata. People tweet for a variety
   # of reasons about a multitude of topics.
-  - Tweets
+  - User
