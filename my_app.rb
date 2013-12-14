@@ -41,8 +41,8 @@ class MyApp < Sinatra::Base
   end
 
   get '/' do
-    #@timeline = @twitter_helper.my_timeline
-    @timeline = JSON.parse(File.read("spec/fixtures/user_timeline.json"))
+    @timeline = @twitter_helper.my_timeline
+    #@timeline = JSON.parse(File.read("spec/fixtures/user_timeline.json"))
     slim :index
   end
 
