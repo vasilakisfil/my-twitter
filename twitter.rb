@@ -26,12 +26,6 @@ module TwitterHelper
       @client = twitter_client
     end
 
-    def user_timeline
-      @client.user_timeline("vasilakisfil").each do |tweet|
-        UserTimeline.create(create_at: tweet.created_at, text: tweet.text)
-      end
-    end
-
     def user_show
       User.create(
         screen_name: @client.user('vasilakisfil').screen_name,
@@ -42,6 +36,12 @@ module TwitterHelper
         followers_count: @client.user('vasilakisfil').followers_count
       )
     end
+
+    def user_timeline
+      @client.user_timeline("vasilakisfil").each do |tweet|
+        UserTimeline.create(create_at: tweet.created_at, text: tweet.text)
+      end
+    end
   end
 
   class DataRetriever
@@ -49,8 +49,12 @@ module TwitterHelper
       @client = twitter_client
     end
 
+    def user_show
+      User.where(screen_name: 'vasilakisfil').first
+    end
+
     def user_timeline
-      User.all
+
     end
   end
 end
@@ -62,5 +66,5 @@ set_up = TwitterHelper::SetUp.new('vasilakisfil')
 #data_fetcher.user_timeline
 data_retriever = TwitterHelper::DataRetriever.new(set_up.client)
 #p data_retriever.user_timeline
-data =  data_retriever.user_timeline
-p data
+user = data_retriever.user_show
+puts user.description
