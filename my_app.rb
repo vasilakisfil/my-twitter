@@ -1,15 +1,28 @@
 require 'sinatra'
-require_relative 'helpers'
 require 'slim'
-require 'twitter'
 require 'json'
 require 'sinatra/assetpack'
+require_relative 'helpers/twitter'
 
 
 class MyApp < Sinatra::Base
   register Sinatra::AssetPack
-
   set :slim, :pretty => true
+
+  helpers TwitterHelper
+
+  Thread.new do
+    @set_up = TwitterHelper::SetUp.new('vasilakisfil')
+    @set_up.authenticate
+    data_fetcher = TwitterHelper::DataFetcher.new(@set_up.client)
+    while true do
+      puts "Fetching data from Twitter REST API"
+      data_fetcher.user_show
+      sleep(25)
+      data_fetcher.user_timeline
+      sleep(180)
+    end
+  end
 
   assets do
     serve '/js', :from => 'assets/javascript'
@@ -37,17 +50,13 @@ class MyApp < Sinatra::Base
 
 
   before do
-    #@twitter_helper = HelperUtils::TwitterHelper.new
+    @data_retriever = TwitterHelper::DataRetriever.new
   end
 
   get '/' do
-    @timeline = @twitter_helper.my_timeline
-    #@timeline = JSON.parse(File.read("spec/fixtures/user_timeline.json"))
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
     slim :index
-  end
-
-  get '/about' do
-    "Hello world"
   end
 
   run! if app_file == $0

@@ -12,9 +12,7 @@ feature "Tweets" do
   before(:each) do
     twitter_helper = double
     HelperUtils::TwitterHelper.stub(:new).and_return(twitter_helper)
-    # bad style ?
-    twitter_helper.stub(:my_timeline).and_return
-    (
+    twitter_helper.stub(:my_timeline).and_return(
       JSON.parse(File.read("spec/fixtures/user_timeline.json"))
     )
   end
