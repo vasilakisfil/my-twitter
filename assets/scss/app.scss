@@ -54,3 +54,11 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
+
+body {
+  background-image: image-url('bg.png') ;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #c0deed;
+}

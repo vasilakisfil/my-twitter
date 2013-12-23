@@ -1,7 +1,7 @@
 require 'sinatra'
+require 'sinatra/assetpack'
 require 'slim'
 require 'json'
-require 'sinatra/assetpack'
 require_relative 'helpers/twitter'
 
 
@@ -34,14 +34,18 @@ class MyApp < Sinatra::Base
 
     js :application, [
       '/js/vendor/*.js',
-      'js/app.js'
+      '/js/app.js'
     ]
 
     serve '/css', :from => 'assets/css'
     css :application, [
-      '/css/normalize.css',
       '/css/app.css'
     ]
+
+   serve '/images', :from => 'assets/images'
+   # images :application, [
+   #   '/images/*'
+   # ]
 
     js_compression :jsmin
     css_compression :sass
