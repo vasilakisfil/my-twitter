@@ -1,8 +1,18 @@
 
 .row
-  h2.small-12.columns Filippos Vasilakis
-  .small-6.columns
-  .small-6.columns
+  .small-5.columns
+    .row
+      .ul.margintop50
+        .li Tweets
+        .li Following
+        .li Followers
+        .li Favorites
+        .li Lists
+
+  .small-7.columns
+    #profil.margintop50
+      Test test test test test test test test
+      Test1 test2
     - @user_timeline.each do |tweet|
       = tweet["text"]
       br/

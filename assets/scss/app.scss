@@ -62,3 +62,17 @@ body {
   background-repeat: no-repeat;
   background-color: #c0deed;
 }
+
+input[type="text"], textarea {
+  background-color: #cccccc;
+  border-radius: 15px;
+}
+#profil {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #555;
+  border-radius: 15px;
+}
+.margintop50 {
+  margin-top: 50px;
+}

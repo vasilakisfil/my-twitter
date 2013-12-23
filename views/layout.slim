@@ -8,27 +8,28 @@ html
     == js :foundation
 
 
-  body
-    nav.top-bar data-topbar=""
-      ul.title-area
-        li.name
-          h1
-            a href="#"
-        li.toggle-topbar.menu-icon
-          a href="#"
-            span Menu
-      section.top-bar-section
-        /! Right Nav Section
-        ul.right
-          li.active
-            a href="#"
-          li.has-dropdown
-            a href="#"
-            ul.dropdown
-              li
-                a href="#"
-        /! Left Nav Section
-        ul.left
-          li
-            a href="#"
+    body
+    .contain-to-grid.fixed
+      nav.top-bar data-topbar=""
+        section.top-bar-section
+          /! Right Nav Section
+          ul.right
+            li.has-form
+              .row.collapse
+                .small-8.columns
+                  input#grey placeholder="Search" type="text"
+            li
+              a href="#" Tweet
+          /! Left Nav Section
+          ul.left
+            li
+              a href="#" Home
+            li
+              a href="#" Connect
+            li
+              a href="#" Discover
+            li.active
+              a href="#" Me
+
+
     == yield

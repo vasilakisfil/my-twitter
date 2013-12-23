@@ -149,7 +149,7 @@ $default-float: left;
 // Grid Variables
 //
 
-// $row-width: em-calc(1000);
+$row-width: em-calc(850);
 // $column-gutter: em-calc(30);
 // $total-columns: 12;
 
@@ -1255,7 +1255,7 @@ $default-float: left;
 
 // Background color for the top bar
 
-// $topbar-bg-color: #111;
+$topbar-bg-color: #222;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1285,7 +1285,7 @@ $default-float: left;
 
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
+$topbar-link-color-active: #c0deed;
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: em-calc(13);
 // $topbar-link-hover-lightness: -30%; // Darken by 30%
