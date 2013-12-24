@@ -68,11 +68,41 @@ input[type="text"], textarea {
   border-radius: 15px;
 }
 #profil {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-color: #555;
-  border-radius: 15px;
+  height: 250px;
+  //padding-bottom: 50px;
+  #background-color: #555;
+  background-image: image-url('grey_header_web.jpg');
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  #details {
+    padding-top: 80px;
+    #screen_name {
+      font-size: 16px;
+    }
+  }
 }
-.margintop50 {
-  margin-top: 50px;
+#test1 {
+  border: 1px solid #AAA;
+  padding-bottom: 50px;
+  background-color: #fff;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.margintop60 {
+  margin-top: 60px;
+}
+.margintop10 {
+  margin-top: 10px;
+}
+.margintop5 {
+  margin-top: 5px;
+}
+
+.text-white {
+  color: #FFF;
+}
+
+.fontsizeA {
+  font-size: 24px;
 }

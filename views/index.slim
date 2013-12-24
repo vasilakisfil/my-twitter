@@ -2,7 +2,7 @@
 .row
   .small-5.columns
     .row
-      .ul.margintop50
+      .ul.margintop60
         .li Tweets
         .li Following
         .li Followers
@@ -10,10 +10,14 @@
         .li Lists
 
   .small-7.columns
-    #profil.margintop50
-      Test test test test test test test test
-      Test1 test2
-    - @user_timeline.each do |tweet|
-      = tweet["text"]
-      br/
-      br/
+    #profil.margintop60.text-white
+      .row#details
+        #name.small-12.columns.fontsizeA = @user_show['name']
+        #screen_name.small-12.columns.margintop5 @#{@user_show['screen_name']}
+        #description.small-9.small-centered.columns.margintop5 = @user_show['description']
+    #test1
+    .margintop10
+      - @user_timeline.each do |tweet|
+        = tweet["text"]
+        br/
+        br/
