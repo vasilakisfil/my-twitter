@@ -149,9 +149,9 @@ $default-float: left;
 // Grid Variables
 //
 
-$row-width: em-calc(850);
-// $column-gutter: em-calc(30);
-// $total-columns: 12;
+$row-width: em-calc(856);
+$column-gutter: em-calc(30);
+$total-columns: 100;
 
 //
 // Block Grid Variables
@@ -1255,12 +1255,12 @@ $row-width: em-calc(850);
 
 // Background color for the top bar
 
-$topbar-bg-color: #222;
+$topbar-bg-color: #252525;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 
-// $topbar-height: 45px;
+$topbar-height: 40px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar

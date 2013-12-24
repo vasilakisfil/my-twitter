@@ -65,10 +65,17 @@ body {
 
 input[type="text"], textarea {
   background-color: #cccccc;
-  border-radius: 15px;
 }
+
+#search {
+  border-radius: 15px;
+  height: 24px;
+  line-height: 1;
+  font-size: 12px;
+}
+
 #profil {
-  height: 250px;
+  height: 255px;
   //padding-bottom: 50px;
   #background-color: #555;
   background-image: image-url('grey_header_web.jpg');

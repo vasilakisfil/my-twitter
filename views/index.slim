@@ -1,6 +1,6 @@
 
 .row
-  .small-5.columns
+  .small-36.columns
     .row
       .ul.margintop60
         .li Tweets
@@ -9,12 +9,12 @@
         .li Favorites
         .li Lists
 
-  .small-7.columns
+  .small-64.columns
     #profil.margintop60.text-white
       .row#details
-        #name.small-12.columns.fontsizeA = @user_show['name']
-        #screen_name.small-12.columns.margintop5 @#{@user_show['screen_name']}
-        #description.small-9.small-centered.columns.margintop5 = @user_show['description']
+        #name.small-100.columns.fontsizeA = @user_show['name']
+        #screen_name.small-100.columns.margintop5 @#{@user_show['screen_name']}
+        #description.small-100.small-centered.columns.margintop5 = @user_show['description']
     #test1
     .margintop10
       - @user_timeline.each do |tweet|
