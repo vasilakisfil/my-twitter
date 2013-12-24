@@ -1,22 +1,36 @@
 
 .row
-  .small-36.columns
-    .row
-      .ul.margintop60
-        .li Tweets
-        .li Following
-        .li Followers
-        .li Favorites
-        .li Lists
-
-  .small-64.columns
-    #profil.margintop60.text-white
+  .small-6.columns
+      ul#user_socials1.no-bullet
+        li.bottomBorder#active Tweets
+        li.bottomBorder Following
+        li.bottomBorder Followers
+        li.bottomBorder Favorites
+        li Lists
+  .small-10.columns
+    #profil
       .row#details
-        #name.small-100.columns.fontsizeA = @user_show['name']
-        #screen_name.small-100.columns.margintop5 @#{@user_show['screen_name']}
-        #description.small-100.small-centered.columns.margintop5 = @user_show['description']
-    #test1
-    .margintop10
+        #name.small-16.columns = @user_show['name']
+        #screen_name.small-16.columns @#{@user_show['screen_name']}
+        #description.small-13.small-centered.columns = @user_show['description']
+    #user_socials2
+      .row
+        .small-3.columns.marginT4.marginL8.borderRS1_e8e8e8
+          span.font12B 10
+          br/
+          span.font10.C999 TWEETS
+        .small-3.columns.marginT4.borderRS1_e8e8e8
+          span.font12B 1
+          br/
+          span.font10.C999 FOLLOWING
+        .small-3.columns.marginT4.borderRS1_e8e8e8
+          span.font12B 1
+          br/
+          span.font10.C999 FOLLOWERS
+        .small-3.columns
+        .small-4.columns.marginTB8
+          a.bs-button href="#" Edit profile
+    .marginT10
       - @user_timeline.each do |tweet|
         = tweet["text"]
         br/
