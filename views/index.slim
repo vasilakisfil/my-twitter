@@ -31,7 +31,18 @@
         .small-4.columns.marginTB8
           a.bs-button href="#" Edit profile
     .marginT10
-      - @user_timeline.each do |tweet|
-        = tweet["text"]
-        br/
-        br/
+      #tweets
+        h2#tweets-title Tweets
+        ul.no-bullet
+          - @user_timeline.each do |tweet|
+            li
+              .row
+                .small-2.columns
+                .small-14.columns
+                  strong = @user_show['name']
+                  = " @#{@user_show['screen_name']}"
+                  br/
+                  = tweet["text"]
+              .row.font12
+                .small-3.small-offset-2.columns Expand
+                .small-7.small-offset-4.columns Reply Delete Favorite More

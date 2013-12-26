@@ -73,6 +73,25 @@ input[type="text"], textarea {
   line-height: 1;
   font-size: 12px;
 }
+
+#tweets {
+  background-color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #AAA;
+  #tweets-title {
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #333;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+}
+
+
 #user_socials1 {
   margin-top: 60px;
   font-size: 14px;
@@ -158,14 +177,15 @@ input[type="text"], textarea {
   margin-left: 8px;
 }
 
-.C999 {
-  color: #999;
-}
-
 .marginTB8 {
   margin-top: 8px;
   margin-bottom: 8px;
 }
+
+.C999 {
+  color: #999;
+}
+
 
 
 .bs-button {
