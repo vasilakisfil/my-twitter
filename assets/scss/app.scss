@@ -93,22 +93,16 @@ input[type="text"], textarea {
     margin-left: 8px;
     border-radius: 5px;
   }
-}
-
-
-#tweet_profil_image {
-  border-radius: 5px;
-  width: 48px;
-  height: 48px;
-}
-
-.profil-image {
-  border-radius: 3px;
+  li {
+    border-bottom: 1px solid #e8e8e8;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
 }
 
 
 #user_socials1 {
-  margin-top: 60px;
+  margin-top: 55px;
   font-size: 14px;
   background-color: #fff;
   color: #0084B4;
@@ -133,15 +127,15 @@ input[type="text"], textarea {
 #profil {
   height: 255px;
   color: #FFF;
-  margin-top: 60px;
-  #background-color: #555;
-  background-image: image-url('grey_header_web.jpg');
+  margin-top: 55px;
+  background-size: 100%;
+  background-image: image-url('grey_header_web_retina.jpg');
+  background-position: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
   #details {
     #main_profile_image {
-      //background: url(https://pbs.twimg.com/profile_images/3772887392/1f356798839d12d9d6202434ce9ce2a6_bigger.jpeg) no-repeat;
       height: 78px;
       width: 78px;
       border: 4px solid #fff;
@@ -165,6 +159,10 @@ input[type="text"], textarea {
     #description {
       font-size: 14px;
       line-height: 18px;
+      margin-bottom: 6px;
+    }
+    #url {
+      font-size: 14px;
     }
   }
 }
