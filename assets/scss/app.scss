@@ -89,6 +89,21 @@ input[type="text"], textarea {
     padding-bottom: 12px;
     border-bottom: 1px solid #e8e8e8;
   }
+  #tweet_profile_image {
+    margin-left: 8px;
+    border-radius: 5px;
+  }
+}
+
+
+#tweet_profil_image {
+  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+}
+
+.profil-image {
+  border-radius: 3px;
 }
 
 
@@ -125,7 +140,19 @@ input[type="text"], textarea {
   border-top-right-radius: 5px;
   text-align: center;
   #details {
-    padding-top: 80px;
+    #main_profile_image {
+      //background: url(https://pbs.twimg.com/profile_images/3772887392/1f356798839d12d9d6202434ce9ce2a6_bigger.jpeg) no-repeat;
+      height: 78px;
+      width: 78px;
+      border: 4px solid #fff;
+      border-radius: 5px;
+      background-color: #fff;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      img {
+        width: 73px;
+      }
+    }
     #name {
       font-weight: bold;
       font-size: 24px;
