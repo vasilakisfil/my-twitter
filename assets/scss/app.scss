@@ -54,126 +54,6 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-
-body {
-  background-image: image-url('bg.png') ;
-  background-attachment: fixed;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-color: #c0deed;
-}
-
-input[type="text"], textarea {
-  background-color: #cccccc;
-}
-
-#search {
-  border-radius: 15px;
-  height: 24px;
-  line-height: 1;
-  font-size: 12px;
-}
-
-#tweets {
-  background-color: #fff;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 1px solid #AAA;
-  #tweets-title {
-    margin-left: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #333;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e8e8e8;
-  }
-  #tweet_profile_image {
-    margin-left: 8px;
-    border-radius: 5px;
-  }
-  li {
-    border-bottom: 1px solid #e8e8e8;
-    margin-top: 6px;
-    margin-bottom: 6px;
-  }
-}
-
-
-#user_socials1 {
-  margin-top: 55px;
-  font-size: 14px;
-  background-color: #fff;
-  color: #0084B4;
-  border-radius: 5px;
-  border: 1px solid #AAA;
-  li {
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  li#active {
-      color: #000;
-      font-weight: bold;
-  }
-  .bottomBorder {
-    border-bottom: 1px solid #e8e8e8;
-  }
-}
-.evitca {
-  color: #0084B4
-}
-#profil {
-  height: 255px;
-  color: #FFF;
-  margin-top: 55px;
-  background-size: 100%;
-  background-image: image-url('grey_header_web_retina.jpg');
-  background-position: center;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  text-align: center;
-  #details {
-    #main_profile_image {
-      height: 78px;
-      width: 78px;
-      border: 4px solid #fff;
-      border-radius: 5px;
-      background-color: #fff;
-      margin-top: 20px;
-      margin-bottom: 6px;
-      img {
-        width: 73px;
-      }
-    }
-    #name {
-      font-weight: bold;
-      font-size: 24px;
-      margin-bottom: 7px;
-    }
-    #screen_name {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-    #description {
-      font-size: 14px;
-      line-height: 18px;
-      margin-bottom: 6px;
-    }
-    #url {
-      font-size: 14px;
-    }
-  }
-}
-#user_socials2 {
-  border: 1px solid #AAA;
-  background-color: #fff;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  line-height: 16px;
-}
-
 .borderRS1_e8e8e8 {
   border-right: 1px solid #e8e8e8 
 }
@@ -270,3 +150,149 @@ input[type="text"], textarea {
   font-size: 14px;
   font-weight: bold;
 }
+
+body {
+  background-image: image-url('bg.png') ;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #c0deed;
+}
+
+input[type="text"], textarea {
+  background-color: #cccccc;
+}
+
+
+#search {
+  border-radius: 15px;
+  height: 24px;
+  line-height: 1;
+  font-size: 12px;
+}
+
+#tweets {
+  background-color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #AAA;
+  #tweets-title {
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #333;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  #tweet_profile_image {
+    margin-left: 8px;
+    border-radius: 5px;
+  }
+  li {
+    border-bottom: 1px solid #e8e8e8;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    cursor: pointer;
+  }
+  //li:hover {
+  //  background-color: #f5f5f5;
+  //}
+}
+
+.hover-grey:hover {
+  background-color: #f5f5f5;
+}
+.hover-blue:hover {
+  color: #0084B4;
+}
+.hover-black:hover {
+  color: #000;
+}
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
+#user_socials1 {
+  margin-top: 55px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #0084B4;
+  border-radius: 5px;
+  border: 1px solid #AAA;
+  li {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    a {
+      color: #0084B4;
+    }
+    a:hover {
+      color: #000;
+    }
+  }
+  li#active {
+    a {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+  .bottomBorder {
+    border-bottom: 1px solid #e8e8e8;
+  }
+}
+.evitca {
+  color: #0084B4
+}
+#profil {
+  height: 255px;
+  color: #FFF;
+  margin-top: 55px;
+  background-size: 100%;
+  background-image: image-url('grey_header_web_retina.jpg');
+  background-position: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  #details {
+    #main_profile_image {
+      height: 78px;
+      width: 78px;
+      border: 4px solid #fff;
+      border-radius: 5px;
+      background-color: #fff;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      img {
+        width: 73px;
+      }
+    }
+    #name {
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 7px;
+    }
+    #screen_name {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    #description {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 6px;
+    }
+    #url {
+      font-size: 14px;
+    }
+  }
+}
+#user_socials2 {
+  border: 1px solid #AAA;
+  background-color: #fff;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  line-height: 16px;
+}
+

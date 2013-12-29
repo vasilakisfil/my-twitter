@@ -1,12 +1,16 @@
-
 .row
   .small-12.columns
       ul#user_socials1.no-bullet
-        li.bottomBorder#active Tweets
-        li.bottomBorder Following
-        li.bottomBorder Followers
-        li.bottomBorder Favorites
-        li Lists
+        li#active
+          a href="#" Tweets
+        li
+          a href="#" Following
+        li.bottomBorder
+          a href="#" Followers
+        li.bottomBorder
+          a href="#" Favorites
+        li
+          a href="#" Lists
   .small-20.columns
     #profil
       .row#details
@@ -19,10 +23,11 @@
         #url.small-30.small-centered.columns = @user_show['url']
     #user_socials2
       .row
-        .small-6.columns.marginT4.marginL8.borderRS1_e8e8e8
-          span.font12B 10
-          br/
-          span.font10.C999 TWEETS
+        a href="#"
+          .small-6.columns.marginT4.marginL8.borderRS1_e8e8e8
+            span.font12B 10
+            br/
+            span.font10.C999 TWEETS
         .small-6.columns.marginT4.borderRS1_e8e8e8
           span.font12B 1
           br/
@@ -39,7 +44,7 @@
         h2#tweets-title Tweets
         ul.no-bullet
           - @user_timeline.each do |tweet|
-            li
+            li.hover-grey
               .row
                 .small-4.columns
                   img#tweet_profile_image src = @user_show['profile_image_url']
@@ -49,5 +54,5 @@
                   br/
                   = tweet["text"]
               .row.font12
-                .small-6.small-offset-4.columns Expand
-                .small-14.small-offset-8.columns Reply Delete Favorite More
+                .small-6.small-offset-4.columns.font12.C999 Expand
+                .small-14.small-offset-8.columns.font12.C999 Reply Delete Favorite More
