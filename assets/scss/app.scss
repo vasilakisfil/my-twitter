@@ -294,5 +294,14 @@ input[type="text"], textarea {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   line-height: 16px;
+  a {
+    color: #000;
+  }
+  .hover-blue:hover {
+    a {
+      color: #0084B4;
+    }
+    cursor: pointer;
+  }
 }
 
