@@ -91,6 +91,10 @@
   color: #999;
 }
 
+.CDDD {
+  color: #DDD;
+}
+
 
 
 .bs-button {
@@ -171,6 +175,24 @@ input[type="text"], textarea {
   font-size: 12px;
 }
 
+#trends {
+  background-color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #AAA;
+  #trends-title {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+}
+
 #tweets {
   background-color: #fff;
   font-size: 14px;
@@ -197,9 +219,14 @@ input[type="text"], textarea {
     padding-bottom: 6px;
     cursor: pointer;
   }
-  //li:hover {
-  //  background-color: #f5f5f5;
-  //}
+  li:hover {
+    .CDDD {
+      color: #999;
+    }
+    .C999 {
+      color: #0084B4;
+    }
+  }
 }
 
 .hover-grey:hover {
@@ -285,9 +312,13 @@ input[type="text"], textarea {
     }
     #url {
       font-size: 14px;
+      a {
+        color: #fff;
+      }
     }
   }
 }
+
 #user_socials2 {
   border: 1px solid #AAA;
   background-color: #fff;
@@ -298,10 +329,13 @@ input[type="text"], textarea {
     color: #000;
   }
   .hover-blue:hover {
-    a {
+    cursor: pointer;
+    .font12B {
       color: #0084B4;
     }
-    cursor: pointer;
+    .C999 {
+      color: #0084B4;
+    }
   }
 }
 

@@ -12,9 +12,9 @@ class MyApp < Sinatra::Base
   helpers TwitterHelper
 
   Thread.new do
-    @set_up = TwitterHelper::SetUp.new('vasilakisfil')
-    @set_up.authenticate
-    data_fetcher = TwitterHelper::DataFetcher.new(@set_up.client)
+    @set_up = TwitterHelper::SetUp.new
+    @set_up.authenticate('vasilakisfil')
+    data_fetcher = TwitterHelper::DataFetcher.new(@set_up.client, @set_up.username)
     while true do
       puts "Fetching data from Twitter REST API"
       data_fetcher.user_show

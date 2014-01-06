@@ -20,7 +20,9 @@
         #name.small-32.columns = @user_show['name']
         #screen_name.small-32.columns @#{@user_show['screen_name']}
         #description.small-26.small-centered.columns = @user_show['description']
-        #url.small-30.small-centered.columns = @user_show['url']
+        #url.small-30.small-centered.columns
+          a href= @user_show['url']
+            =@user_show['url']
     #user_socials2
       .row
         .small-6.columns.marginT4.marginL8.borderRS1_e8e8e8.hover-blue
@@ -29,13 +31,13 @@
           br/
           a href="#"
             span.font10.C999 TWEETS
-        .small-6.columns.marginT4.borderRS1_e8e8e8
+        .small-6.columns.marginT4.borderRS1_e8e8e8.hover-blue
           a href="#"
             span.font12B #{@user_show['friends_count']}
           br/
           a href="#"
             span.font10.C999 FOLLOWING
-        .small-6.columns.marginT4.borderRS1_e8e8e8
+        .small-6.columns.marginT4.borderRS1_e8e8e8.hover-blue
           a href="#"
             span.font12B #{@user_show['followers_count']}
           br/
@@ -44,7 +46,14 @@
         .small-6.columns
         .small-8.columns.marginTB8
           a.bs-button href="#" Edit profile
-    .marginT10
+.marginT10
+.row
+  .small-12.columns
+    #trends
+      h2#trends-title
+        | Trends · 
+        a href="#" Change
+  .small-20.columns
       #tweets
         h2#tweets-title Tweets
         ul.no-bullet
@@ -60,4 +69,4 @@
                   = tweet["text"]
               .row.font12
                 .small-6.small-offset-4.columns.font12.C999 Expand
-                .small-14.small-offset-8.columns.font12.C999 Reply Delete Favorite More
+                .small-14.small-offset-8.columns.font12.CDDD Reply Delete Favorite More
