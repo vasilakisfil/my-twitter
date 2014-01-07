@@ -97,7 +97,7 @@
                   img#tweet_profile_image src = @user_show['profile_image_url']
                 .small-28.columns
                   strong = @user_show['name']
-                  = " @#{@user_show['screen_name']}"
+                  span.font12.C999= " @#{@user_show['screen_name']}"
                   br/
                   = tweet["text"]
               .row.font12
