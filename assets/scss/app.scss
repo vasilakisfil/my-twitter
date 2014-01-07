@@ -97,6 +97,8 @@
 
 
 
+
+
 .bs-button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -155,6 +157,13 @@
   font-weight: bold;
 }
 
+.CBBB {
+  color: #BBB;
+}
+.CFFF {
+  color: #FFF;
+}
+
 body {
   background-image: image-url('bg.png') ;
   background-attachment: fixed;
@@ -168,9 +177,104 @@ input[type="text"], textarea {
 }
 
 
+#top-menu {
+  li a span {
+    font: 10px;
+  }
+}
+
+#home {
+  width: 21px;
+  height: 22px;
+  display: inline-block;
+  margin: -4px 6px 0 0;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') 0px -50px;
+  background-repeat: no-repeat;
+}
+
+#connect {
+  width: 21px;
+  height: 22px;
+  display: inline-block;
+  margin: -4px 6px 0 0;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -80px -50px;
+  background-repeat: no-repeat;
+}
+
+#discover {
+  width: 21px;
+  height: 22px;
+  display: inline-block;
+  margin: -4px 6px 0 0;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -40px -50px;
+  background-repeat: no-repeat;
+}
+
+#me {
+  width: 21px;
+  height: 22px;
+  display: inline-block;
+  margin: -4px 6px 0 0;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -120px -110px;
+  background-repeat: no-repeat;
+}
+
+#bird-topbar {
+  margin-left: 50px;
+  margin-right: 50px;
+  #bird {
+    width: 24px;
+    height: 21px;
+    display: inline-block;
+    vertical-align: text-top;
+    background: image-url('twitter_web_sprite_icons.png') -40px -0px;
+    background-repeat: no-repeat;
+  }
+}
+
+#direct-messages {
+  width: 20px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -87px -880px;
+  background-repeat: no-repeat;
+  margin-top: -2px;
+}
+#user-dropdown {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -160px -50px;
+  background-repeat: no-repeat;
+  margin: -3px 6px 0 0;
+}
+
+#new-tweet {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -200px -50px;
+  background-repeat: no-repeat;
+  margin: -3px;
+}
+
+#tweet-btn {
+  border-radius: 5px;
+}
+
+
+
 #search {
   border-radius: 15px;
-  height: 24px;
+  height: 26px;
+  width: 150px;
   line-height: 1;
   font-size: 12px;
 }
@@ -189,7 +293,15 @@ input[type="text"], textarea {
     padding-top: 12px;
     padding-bottom: 12px;
     margin-bottom: 0px;
-    border-bottom: 1px solid #e8e8e8;
+  }
+  a {
+    color: #0084B4;
+  }
+  li {
+    padding-left: 10px;
+    a {
+      color: #0084B4;
+    }
   }
 }
 
@@ -338,4 +450,6 @@ input[type="text"], textarea {
     }
   }
 }
+
+
 
