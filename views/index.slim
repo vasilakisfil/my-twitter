@@ -1,105 +1,11 @@
 .row
   .small-12.columns
-      ul#user_socials1.no-bullet
-        li.bottomBorder#active
-          a href="#" Tweets
-        li.bottomBorder
-          a href="#" Following
-        li.bottomBorder
-          a href="#" Followers
-        li.bottomBorder
-          a href="#" Favorites
-        li
-          a href="#" Lists
+    == partial :_dashboard
   .small-20.columns
-    #profil
-      .row#details
-        .small-6.small-centered.columns
-          #main_profile_image
-            img src= @user_show['profile_image_url']
-        #name.small-32.columns = @user_show['name']
-        #screen_name.small-32.columns @#{@user_show['screen_name']}
-        #description.small-26.small-centered.columns = @user_show['description']
-        #url.small-30.small-centered.columns
-          a href= @user_show['url']
-            =@user_show['url']
-    #user_socials2
-      .row
-        .small-6.columns.marginT4.marginL8.borderRS1_e8e8e8.hover-blue
-          a href="#"
-            span.font12B #{@user_show['statuses_count']}
-          br/
-          a href="#"
-            span.font10.C999 TWEETS
-        .small-6.columns.marginT4.borderRS1_e8e8e8.hover-blue
-          a href="#"
-            span.font12B #{@user_show['friends_count']}
-          br/
-          a href="#"
-            span.font10.C999 FOLLOWING
-        .small-6.columns.marginT4.borderRS1_e8e8e8.hover-blue
-          a href="#"
-            span.font12B #{@user_show['followers_count']}
-          br/
-          a href="#"
-            span.font10.C999 FOLLOWERS
-        .small-6.columns
-        .small-8.columns.marginTB8
-          a.bs-button href="#" Edit profile
+    == partial :_profile
 .marginT10
 .row
   .small-12.columns
-    #trends
-      h2#trends-title
-        | Trends 
-        span.font12 ·
-        a.font12 href="#"
-          |  Change
-      ul.no-bullet
-        li
-          a.font12 href="#"
-            |  Tror
-        li
-          a.font12 href="#"
-            |  Vad
-        li
-          a.font12 href="#"
-            |  Vet
-        li
-          a.font12 href="#"
-            |  Var
-        li
-          a.font12 href="#"
-            |  #twittpuc
-        li
-          a.font12 href="#"
-            |  Walcott
-        li
-          a.font12 href="#"
-            |  Men
-        li
-          a.font12 href="#"
-            |  #RealBeliebersStay
-        li
-          a.font12 href="#"
-            |  #Milk TysonLiveStream
-        li
-          a.font12 href="#"
-            |  #AskGeorgeUnionJ
+    == partial :_trends
   .small-20.columns
-      #tweets
-        h2#tweets-title Tweets
-        ul.no-bullet
-          - @user_timeline.each do |tweet|
-            li.hover-grey
-              .row
-                .small-4.columns
-                  img#tweet_profile_image src = @user_show['profile_image_url']
-                .small-28.columns
-                  strong = @user_show['name']
-                  span.font12.C999= " @#{@user_show['screen_name']}"
-                  br/
-                  = tweet["text"]
-              .row.font12
-                .small-6.small-offset-4.columns.font12.C999 Expand
-                .small-14.small-offset-8.columns.font12.CDDD Reply Delete Favorite More
+    == partial :_tweets

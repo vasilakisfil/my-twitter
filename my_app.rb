@@ -2,12 +2,15 @@ require 'sinatra'
 require 'sinatra/assetpack'
 require 'slim'
 require 'json'
+require 'sinatra/partial'
 require_relative 'helpers/twitter'
 
 
 class MyApp < Sinatra::Base
   register Sinatra::AssetPack
+  register Sinatra::Partial
   set :slim, :pretty => true
+  set :partial_template_engine, :slim
 
   helpers TwitterHelper
 

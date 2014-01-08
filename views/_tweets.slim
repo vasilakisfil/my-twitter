@@ -1,0 +1,16 @@
+#tweets
+  h2#tweets-title Tweets
+  ul.no-bullet
+    - @user_timeline.each do |tweet|
+      li.hover-grey
+        .row
+          .small-4.columns
+            img#tweet_profile_image src = @user_show['profile_image_url']
+          .small-28.columns
+            strong = @user_show['name']
+            span.font12.C999= " @#{@user_show['screen_name']}"
+            br/
+            = tweet["text"]
+        .row.font12
+          .small-6.small-offset-4.columns.font12.C999 Expand
+          .small-14.small-offset-8.columns.font12.CDDD Reply Delete Favorite More
