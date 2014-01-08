@@ -66,5 +66,35 @@ class MyApp < Sinatra::Base
     slim :index
   end
 
+  get '/vasilakisfil' do
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
+    slim :index
+  end
+
+  get '/following' do
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
+    slim :following
+  end
+
+  get '/followers' do
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
+    slim :following
+  end
+
+  get '/favorites' do
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
+    slim :following
+  end
+
+  get '/lists' do
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
+    slim :following
+  end
+
   run! if app_file == $0
 end
