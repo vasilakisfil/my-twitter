@@ -279,6 +279,17 @@ input[type="text"], textarea {
   font-size: 12px;
 }
 
+#twitter-links {
+  background-color: #fff;
+  font-size: 10px;
+  border-radius: 5px;
+  line-height: 18px;
+  border: 1px solid #AAA;
+  ul {
+    margin: 10px 25px 10px 0;
+  }
+}
+
 #trends {
   background-color: #fff;
   font-size: 14px;
