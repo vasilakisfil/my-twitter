@@ -1,4 +1,4 @@
-- if signed_in?
+- if !signed_in?
   .contain-to-grid.fixed
     nav.top-bar data-topbar=""
       section.top-bar-section
@@ -49,6 +49,9 @@
             .row.collapse
               .small-20.columns
                 input#search placeholder="Search" type="text"
-          li
+          li.has-dropdown
             a href="#" Sign in!
+            ul.dropdown
+              li
+                a href="#" Username
         /! Left Nav Section
