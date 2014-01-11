@@ -4,6 +4,8 @@ require 'slim'
 require 'json'
 require 'sinatra/partial'
 require_relative 'helpers/twitter'
+require_relative 'helpers/helpers'
+
 
 
 class MyApp < Sinatra::Base
@@ -11,8 +13,10 @@ class MyApp < Sinatra::Base
   register Sinatra::Partial
   set :slim, :pretty => true
   set :partial_template_engine, :slim
+  enable :sessions
 
   helpers TwitterHelper
+  helpers Sinatra::ViewHelpers
 
   Thread.new do
     @set_up = TwitterHelper::SetUp.new
@@ -97,4 +101,5 @@ class MyApp < Sinatra::Base
   end
 
   run! if app_file == $0
+
 end

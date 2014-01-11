@@ -1,8 +1,9 @@
-module HelperUtils
+require 'sinatra/base'
 
-  class TwitterHelper
-
-
+module Sinatra
+  module ViewHelpers
+    def signed_in?
+      return false
+    end
   end
-
 end
