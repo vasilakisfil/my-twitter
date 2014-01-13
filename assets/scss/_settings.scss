@@ -303,7 +303,7 @@ $total-columns: 32;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: em-calc(14);
 // $input-bg-color: #fff;
-// $input-focus-bg-color: darken(#fff, 2%);
+// $input-focus-bg-color: darken(#52a8ec, 2%);
 // $input-border-color: darken(#fff, 20%);
 // $input-focus-border-color: darken(#fff, 40%);
 // $input-border-style: solid;
@@ -669,7 +669,7 @@ $total-columns: 32;
 
 // $f-dropdown-triangle-size: 6px;
 // $f-dropdown-triangle-color: #fff;
-// $f-dropdown-triangle-side-offset: 10px;
+ $f-dropdown-triangle-side-offset: 247px;
 
 // We use these to control styles for the list elements.
 
@@ -683,7 +683,7 @@ $total-columns: 32;
 
 // We use this to control the styles for when the dropdown has custom content.
 
-// $f-dropdown-content-padding: em-calc(20);
+ $f-dropdown-content-padding: em-calc(10);
 
 //
 // Flex Video Variables

@@ -257,6 +257,7 @@ input[type="text"], textarea {
   background-repeat: no-repeat;
   margin-top: -2px;
 }
+
 #user-dropdown {
   width: 22px;
   height: 22px;
@@ -375,6 +376,41 @@ input[type="text"], textarea {
 }
 .hover-underline:hover {
   text-decoration: underline;
+}
+
+#sign-in {
+  small {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+  strong {
+    font-size: 12px;
+  }
+}
+
+#drop2 {
+  font-weight: normal;
+  font-style: normal;
+  color: #000;
+  border-radius: 5px;
+  width: 271px;
+  max-width: 271px;
+  margin-left: -98px;
+  label {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+  }
+  input {
+    margin-bottom: 20px;
+    margin-top: -10px;
+    border-radius: 3px;
+  }
+  input:focus {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);
+    border-color: rgba(82,168,236,.6);
+  }
 }
 
 #dashboard {
