@@ -1,5 +1,5 @@
 - if signed_in?
-  .contain-to-grid.fixed
+  #navbar-bg.contain-to-grid.fixed
     nav.top-bar data-topbar=""
       section.top-bar-section
         ul.left
@@ -38,19 +38,19 @@
               span#new-tweet
         /! Left Nav Section
 - else
-  .contain-to-grid.fixed
-    nav.top-bar data-topbar=""
-      section.top-bar-section
-        #bird-topbar-left.left
+  .contain-to-grid.fixed.navbar-bg
+    nav.top-bar.navbar-bg data-topbar=""
+      section.top-bar-section.navbar-bg
+        #bird-topbar-left.left.navbar-bg
             span#bird
         /! Right Nav Section
-        ul.right
-          li.has-form
-            .row.collapse
-              .small-20.columns
+        ul.right.navbar-bg
+          li.has-form.navbar-bg
+            .row.collapse.navbar-bg
+              .small-20.columns.navbar-bg
                 input#search placeholder="Search" type="text"
-          li
-            a#sign-in data-dropdown="drop2" href="#"
+          li.navbar-bg
+            a#sign-in.navbar-bg data-dropdown="drop2" href="#"
               small.CBBB
                 | Have an account?
               strong.CBBB

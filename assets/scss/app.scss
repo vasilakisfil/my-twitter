@@ -389,7 +389,24 @@ input[type="text"], textarea {
   }
 }
 
+.navbar-bg {
+  background-image: image-url('twitter_web_sprite_bgs.png') !important;
+  background-repeat: repeat-x !important;
+  background-position: 0 0 !important;
+}
+
+.navbar-bg2 {
+  background-image: image-url('twitter_web_sprite_bgs.png') !important;
+  background-repeat: repeat-x !important;
+  background-position: 0 0 !important;
+}
+
 #drop2 {
+  input {
+    text-indent: 5px;
+    line-height: normal;
+    padding: 0px;
+  }
   font-weight: normal;
   font-style: normal;
   color: #000;
