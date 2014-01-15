@@ -68,6 +68,10 @@
   margin-top: 4px;
 }
 
+.marginL4 {
+  margin-left: 4px;
+}
+
 .marginB10 {
   margin-bottom: 10px;
 }
@@ -96,8 +100,49 @@
 }
 
 
+#drop-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
+	background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
+	background-color:#f9f9f9;
+  border-radius: 5px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:9px;
+	width:80px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+#signin-options {
+  line-height: 18px;
+}
 
+#forgot {
+  background: #fff;
+  margin-top: 5px;
+  padding: 0px;
+  line-height: 0px;
+}
+
+#mobile-sms {
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 0px;
+  line-height: 0px;
+}
 
 .bs-button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -135,11 +180,15 @@
 }
 
 
+
 .font10 {
   font-size: 10px;
 }
 .font12 {
   font-size: 12px;
+}
+.font13 {
+  font-size: 13px;
 }
 .font14 {
   font-size: 14px;
