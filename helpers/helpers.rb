@@ -3,7 +3,7 @@ require 'sinatra/base'
 module Sinatra
   module ViewHelpers
     def signed_in?
-      return false
+      !session[:user_authenticated].nil?
     end
   end
 end

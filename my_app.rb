@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/assetpack'
 require 'slim'
 require 'json'
+require 'yaml'
+require 'scrypt'
 require 'sinatra/partial'
 require_relative 'helpers/twitter'
 require_relative 'helpers/helpers'
@@ -18,9 +20,12 @@ class MyApp < Sinatra::Base
   helpers TwitterHelper
   helpers Sinatra::ViewHelpers
 
+  yaml_config = YAML::load_file('config.yml')
+  screen_name = username = yaml_config['screen_name']
+
   Thread.new do
     @set_up = TwitterHelper::SetUp.new
-    @set_up.authenticate('vasilakisfil')
+    @set_up.authenticate(screen_name)
     data_fetcher = TwitterHelper::DataFetcher.new(@set_up.client, @set_up.username)
     while true do
       puts "Fetching data from Twitter REST API"
@@ -77,7 +82,12 @@ class MyApp < Sinatra::Base
   end
 
   post '/vasilakisfil' do
-    puts params[:password]
+    key_len = yaml_config['password']['key_len']
+    salt = yaml_config['password']['salt']
+    hashed_pass = yaml_config['password']['hash']
+    pass = params[:password]
+    new_hashed_pass = SCrypt::Engine.hash_secret(params[:password], salt, 512)
+    session[:user_authenticated] = screen_name if hashed_pass == new_hashed_pass
     @user_timeline = @data_retriever.user_timeline
     @user_show = @data_retriever.user_show
     slim :index
