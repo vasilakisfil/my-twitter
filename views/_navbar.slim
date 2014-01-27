@@ -56,7 +56,7 @@
               strong.CBBB
                 | Sign in
             #drop2.f-dropdown.content data-dropdown-content=""
-              .row
+              form.row action="/vasilakisfil" method="POST"
                 .marginT4
                 .small-32.columns
                   label Username or email
@@ -65,10 +65,10 @@
                 .small-32.columns
                   label Password
                 .small-32.columns
-                  input type="password"
+                  input name="password" type="password"
                 .small-32.columns.marginT4
                   .left
-                    a#drop-button href="#" Sign in
+                    input#drop-button type="submit" value="Sign in"
                   .right
                     input checked="checked" type="checkbox"
                       span.font13.C999.marginL4 Remember me

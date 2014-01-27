@@ -10,6 +10,8 @@ group :test do
   gem 'capybara'
 end
 
+gem 'yaml'
+gem 'scrypt'
 gem 'sinatra-partial'
 gem 'json'
 gem 'sinatra-assetpack'

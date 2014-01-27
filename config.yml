@@ -1,0 +1,6 @@
+screen_name:
+password:
+  salt_size:
+  salt:
+  key_len:
+  hash:

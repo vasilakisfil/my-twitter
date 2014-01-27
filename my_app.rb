@@ -76,6 +76,13 @@ class MyApp < Sinatra::Base
     slim :index
   end
 
+  post '/vasilakisfil' do
+    puts params[:password]
+    @user_timeline = @data_retriever.user_timeline
+    @user_show = @data_retriever.user_show
+    slim :index
+  end
+
   get '/following' do
     @user_timeline = @data_retriever.user_timeline
     @user_show = @data_retriever.user_show
