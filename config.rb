@@ -1,5 +1,5 @@
 require 'zurb-foundation'
-# Require any additional compass plugins here.
+require './my_app'
 
 
 # Set this to the root of your project when deployed:
@@ -24,3 +24,36 @@ relative_assets = true
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass assets/scss scss && rm -rf sass && mv scss sass
+
+
+
+module MyTwitter
+  def self.app #
+    Rack::Builder.app do
+      cookie_settings = {
+        :key          => 'usr',
+        :path         => "/",
+        :expire_after => 86400,             # In seconds, 1 day.
+        :secret       => "aaaaaaaaaaaaaaaa"   #ENV["COOKIE_KEY"], # load this into the environment of the server
+        :httponly     => true
+      }
+      cookie_settings.merge!( :secure => true ) if ENV["RACK_ENV"] == "production"
+
+      # AES encryption of cookies
+      use Rack::Session::EncryptedCookie, cookie_settings
+
+      # other stuff here
+
+      run MyApp
+    end
+  end
+end
+
+
+
+
+
+
+
+
+

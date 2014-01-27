@@ -1,2 +1,3 @@
-require './my_app.rb'
-run MyApp
+require './my_app'
+
+run MyTwitter::MyApp
