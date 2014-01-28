@@ -14,9 +14,10 @@ module TwitterHelper
     end
 
     def authenticate(username)
+      yaml_config = YAML::load_file('config.yml')
       @client = Twitter::Client.new(
-        :oauth_token        => ENV['OAUTH_TOKEN'],
-        :oauth_token_secret => ENV['OAUTH_TOKEN_SECRET']
+        :oauth_token        => yaml_config['oauth']['OAUTH_TOKEN'],
+        :oauth_token_secret => yaml_config['oauth']['OAUTH_TOKEN_SECRET']
       )
       @username = username
     end

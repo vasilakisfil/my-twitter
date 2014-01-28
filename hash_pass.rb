@@ -1,5 +1,6 @@
 require 'scrypt'
 require 'yaml'
+require 'securerandom'
 require 'io/console'
 
 puts "Enter your username (screen_name)"
@@ -21,4 +22,6 @@ config['password']['salt_size'] = 32
 config['password']['key_len'] = 512
 config['password']['salt'] = salt
 config['password']['hash'] = hashed_pass
+# quietly update cookie secret token
+config['cookie_key'] = SecureRandom.hex(32)
 File.open('config.yml', 'w') {|f| f.write config.to_yaml }
