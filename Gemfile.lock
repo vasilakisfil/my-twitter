@@ -14,6 +14,7 @@ GEM
       sass (~> 3.1)
     daemons (1.1.9)
     diff-lcs (1.2.5)
+    encrypted_cookie (0.0.4)
     eventmachine (1.0.3)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -86,6 +87,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   compass
+  encrypted_cookie
   json
   rspec
   scrypt

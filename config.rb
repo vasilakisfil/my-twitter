@@ -1,5 +1,6 @@
 require 'zurb-foundation'
 require './my_app'
+require 'encrypted_cookie'
 
 
 # Set this to the root of your project when deployed:

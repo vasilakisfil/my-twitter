@@ -1,3 +1,4 @@
 require './my_app'
+require './config.rb'
 
-run MyTwitter::MyApp
+run MyTwitter.app

@@ -18,9 +18,9 @@ module MyTwitter
     #enable :sessions
     #use Rack::Session::Cookie, {:http_only => true }
 
-
     helpers TwitterHelper
     helpers Sinatra::ViewHelpers
+
 
     yaml_config = YAML::load_file('config.yml')
     screen_name = username = yaml_config['screen_name']
@@ -114,6 +114,7 @@ module MyTwitter
     end
 
     get '/lists' do
+      session.clear
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :following

@@ -31,8 +31,25 @@
             a href="#"
               span#direct-messages
           li
-            a href="#"
+            a data-dropdown="drop1" href="#"
               span#user-dropdown
+            #drop1.f-dropdown.content data-dropdown-content=""
+              form.row action="/vasilakisfil" method="POST"
+                .marginT4
+                .small-12.columns
+                  label photo
+                .small-24.columns
+                  span Filippos Vasilakis
+                .small-32.columns
+                  button.my-button Lists
+                .small-32.columns
+                  button.my-button href="#" Help
+                .small-32.columns
+                  button.my-button href="#" Keyboard shortcuts
+                .small-32.columns
+                  button.my-button href="#" Settings
+                .small-32.columns
+                  button.my-button href="#" Sign out
           li
             a.button#tweet-btn  href="#"
               span#new-tweet

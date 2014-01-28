@@ -104,10 +104,10 @@
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
-	background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
-	background-color:#f9f9f9;
+	background:-webkit-gradient( linear, left bottom, left top, color-stop(0.05, #d8d8d8), color-stop(1, #e9e9e9) );
+	background:-moz-linear-gradient( center bottom, #d8d8d8 5%, #e9e9e9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d8d8d8', endColorstr='#e9e9e9');
+	background-color:#d8d8d8;
   border-radius: 5px;
 	text-indent:0;
 	border:1px solid #dcdcdc;
@@ -148,10 +148,10 @@
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
-	background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
-	background-color:#f9f9f9;
+	background:-webkit-gradient( linear, left bottom, left top, color-stop(0.05, #d8d8d8), color-stop(1, #e9e9e9) );
+	background:-moz-linear-gradient( center bottom, #d8d8d8 5%, #e9e9e9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d8d8d8', endColorstr='#e9e9e9');
+	background-color:#d8d8d8;
   border-radius: 5px;
 	text-indent:0;
 	border:1px solid #dcdcdc;
@@ -448,6 +448,47 @@ input[type="text"], textarea {
   background-image: image-url('twitter_web_sprite_bgs.png') !important;
   background-repeat: repeat-x !important;
   background-position: 0 0 !important;
+}
+
+.my-button{
+  cursor: pointer;
+  background: transparent;
+  border: 0px;
+  color: #333;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+#drop1 {
+  input {
+    text-indent: 5px;
+    line-height: normal;
+    padding: 0px;
+  }
+  font-weight: normal;
+  font-style: normal;
+  color: #000;
+  border-radius: 5px;
+  //width: 271px;
+  //max-width: 271px;
+  margin-left: -160px;
+  label {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+  }
+  input {
+    margin-bottom: 20px;
+    margin-top: -10px;
+    border-radius: 3px;
+  }
+  input:focus {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 0 8px rgba(82,168,236,.6);
+    border-color: rgba(82,168,236,.6);
+  }
 }
 
 #drop2 {
