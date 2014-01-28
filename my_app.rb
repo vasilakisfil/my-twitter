@@ -20,6 +20,7 @@ module MyTwitter
 
     helpers TwitterHelper
     helpers Sinatra::ViewHelpers
+    helpers Sinatra::VariousHelpers
 
 
     yaml_config = YAML::load_file('config.yml')

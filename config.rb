@@ -1,6 +1,7 @@
 require 'zurb-foundation'
 require './my_app'
 require 'encrypted_cookie'
+require 'rack/csrf'
 
 
 # Set this to the root of your project when deployed:
@@ -41,6 +42,7 @@ module MyTwitter
 
       # AES encryption of cookies
       use Rack::Session::EncryptedCookie, cookie_settings
+      use Rack::Csrf, raise: true
 
       # other stuff here
 

@@ -74,6 +74,7 @@
                 | Sign in
             #drop2.f-dropdown.content data-dropdown-content=""
               form.row action="/vasilakisfil" method="POST"
+                == csrf_tag
                 .marginT4
                 .small-32.columns
                   label Username or email

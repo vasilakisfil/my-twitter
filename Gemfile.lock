@@ -36,6 +36,8 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack_csrf (2.4.0)
+      rack (>= 0.9)
     rake (10.1.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -89,6 +91,7 @@ DEPENDENCIES
   compass
   encrypted_cookie
   json
+  rack_csrf
   rspec
   scrypt
   shotgun
