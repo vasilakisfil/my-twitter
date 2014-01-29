@@ -84,16 +84,23 @@ module MyTwitter
       slim :index
     end
 
-    post '/vasilakisfil' do
-      key_len = yaml_config['password']['key_len']
-      salt = yaml_config['password']['salt']
-      hashed_pass = yaml_config['password']['hash']
-      pass = params[:password]
-      new_hashed_pass = SCrypt::Engine.hash_secret(params[:password], salt, 512)
-      session[:user_authenticated] = screen_name if hashed_pass == new_hashed_pass
-      @user_timeline = @data_retriever.user_timeline
-      @user_show = @data_retriever.user_show
-      slim :index
+    post '/session' do
+      if params[:_method] == "DELETE"
+        session.clear
+      else
+        key_len = yaml_config['password']['key_len']
+        salt = yaml_config['password']['salt']
+        hashed_pass = yaml_config['password']['hash']
+        pass = params[:password]
+        new_hashed_pass = SCrypt::Engine.hash_secret(params[:password], salt, 512)
+        session[:user_authenticated] = screen_name if hashed_pass == new_hashed_pass
+      end
+      redirect to('/vasilakisfil')
+    end
+
+    delete '/session' do
+      session.clear
+      redirect to('/')
     end
 
     get '/following' do

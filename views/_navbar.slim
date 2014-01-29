@@ -59,14 +59,15 @@
                     a.font12 href="#" Settings
                 li.row.paddingT5B5
                   .small-32.columns
-                    form action="/vasilakisfil" method="POST"
+                    form action="/session" method="POST"
                       == csrf_tag
+                      input type="hidden" name="_method" value="DELETE"
                       button.my-button type="submit" Sign out
           li
             a.button#tweet-btn  href="#"
               span#new-tweet
         /! Left Nav Section
-- else
+- else #if not signed in
   .contain-to-grid.fixed.navbar-bg
     nav.top-bar.navbar-bg data-topbar=""
       section.top-bar-section.navbar-bg
@@ -85,7 +86,8 @@
               strong.CBBB
                 | Sign in
             #drop2.f-dropdown.content data-dropdown-content=""
-              form.row action="/vasilakisfil" method="POST"
+              form.row action="/session" method="POST"
+                input type="hidden" name="_method" value="POST"
                 == csrf_tag
                 .marginT4
                 .small-32.columns
