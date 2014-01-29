@@ -34,22 +34,34 @@
             a data-dropdown="drop1" href="#"
               span#user-dropdown
             #drop1.f-dropdown.content data-dropdown-content=""
-              form.row action="/vasilakisfil" method="POST"
-                .marginT4
-                .small-12.columns
-                  label photo
-                .small-24.columns
-                  span Filippos Vasilakis
-                .small-32.columns
-                  button.my-button Lists
-                .small-32.columns
-                  button.my-button href="#" Help
-                .small-32.columns
-                  button.my-button href="#" Keyboard shortcuts
-                .small-32.columns
-                  button.my-button href="#" Settings
-                .small-32.columns
-                  button.my-button href="#" Sign out
+              ul.marginT4
+                li.row.paddingT5B5
+                  .small-8.columns#dropdown-img-div
+                    img#dropdown-img src=@user_show['profile_image_url']
+                  .small-24.columns#dropdown-name-div
+                    b.font13 Filippos Vasilakis
+                    br/
+                    span.font10.C999 Edit profile
+                li.dropdown-divider
+                li.row
+                  .small-32.columns
+                    a.font12 href="#" Lists
+                li.dropdown-divider
+                li.row
+                  .small-32.columns
+                    a.font12 href="#" Help
+                li.row
+                  .small-32.columns
+                    a.font12 href="#" Keyboard shortcuts
+                li.dropdown-divider
+                li.row
+                  .small-32.columns
+                    a.font12 href="#" Settings
+                li.row.paddingT5B5
+                  .small-32.columns
+                    form action="/vasilakisfil" method="POST"
+                      == csrf_tag
+                      button.my-button type="submit" Sign out
           li
             a.button#tweet-btn  href="#"
               span#new-tweet
