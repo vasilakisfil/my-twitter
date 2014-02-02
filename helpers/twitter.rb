@@ -96,20 +96,14 @@ module TwitterHelper
       timeline_hash = JSON.parse(File.read(@user_timeline_dir))
     end
   end
+
+  def TwitterHelper.send_tweet(client, tweet)
+    data_fetcher = DataFetcher.new(client, client.current_user.screen_name)
+    client.update(tweet)
+    data_fetcher.user_timeline
+  end
+
+
+
 end
-
-
-=begin
-set_up = TwitterHelper::SetUp.new('vasilakisfil')
-set_up.authenticate
-
-data_fetcher = TwitterHelper::DataFetcher.new(set_up.client)
-data_fetcher.user_show
-sleep(25)
-data_fetcher.user_timeline
-
-data_retriever = TwitterHelper::DataRetriever.new
-p data_retriever.user_show
-p data_retriever.user_timeline
-=end
 

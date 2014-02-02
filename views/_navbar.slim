@@ -68,9 +68,11 @@
               span#new-tweet
             #tweet-form.reveal-modal data-reveal=""
               form action="/tweet" method="POST"
+                == csrf_tag
+                input type="hidden" name="_method" value="POST"
                 .row
                   .small-32.columns
-                    textarea#tweet-text
+                    textarea#tweet-text name="tweet_text"
                   .small-5.offset-27.columns
                     button#tweet-btn2.tiny type="submit" disabled="" Tweet
               a.close-reveal-modal &#215;

@@ -24,11 +24,12 @@ module MyTwitter
 
 
     yaml_config = YAML::load_file('config.yml')
-    screen_name = username = yaml_config['screen_name']
+    @@screen_name = username = yaml_config['screen_name']
+
 
     Thread.new do
       @set_up = TwitterHelper::SetUp.new
-      @set_up.authenticate(screen_name)
+      @set_up.authenticate(@@screen_name)
       data_fetcher = TwitterHelper::DataFetcher.new(@set_up.client, @set_up.username)
       while true do
         puts "Fetching data from Twitter REST API"
@@ -100,6 +101,17 @@ module MyTwitter
 
     delete '/session' do
       session.clear
+      redirect to('/')
+    end
+
+
+    post '/tweet' do
+      set_up = TwitterHelper::SetUp.new
+      set_up.authenticate(@@screen_name)
+      set_up.client.current_user.screen_name
+      if params[:_method] == "POST"
+        TwitterHelper.send_tweet(set_up.client, params[:tweet_text])
+      end
       redirect to('/')
     end
 
