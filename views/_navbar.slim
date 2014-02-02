@@ -5,19 +5,19 @@
         ul.left
           li class=("active" if @home_page)
             a href="/"
-              span.home id=('homeactive' if @home_page)
+              span.home id=('homeactive' if request.path.eql? "/")
               span.font12.CBBB Home
-          li class=("active" if @connect_page)
+          li class=("active" if request.path.eql? "/connect")
             a href="connect"
-              span.connect id=('connectactive' if @connect_page)
+              span.connect id=('connectactive' if request.path.eql? "/connect")
               span.font12.CBBB Connect
-          li class=("active" if @discover_page)
+          li class=("active" if request.path.eql? "/discover")
             a href="discover"
-              span.discover id=('discoveractive' if @discover_page)
+              span.discover id=('discoveractive' if request.path.eql? "/discover")
               span.font12.CBBB Discover
-          li class=("active" if @me_page)
+          li class=("active" if request.path.eql? "/vasilakisfil")
             a href="vasilakisfil"
-              span.me id=('meactive' if @me_page)
+              span.me id=('meactive' if request.path.eql? "/vasilakisfil")
               span.font12.CBBB Me
         #bird-topbar-center.left
             span#bird

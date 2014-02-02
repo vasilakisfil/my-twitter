@@ -1,11 +1,11 @@
 ul#dashboard.no-bullet
-  li.bottomBorder#active
+  li.bottomBorder id=('active' if request.path.eql? "/vasilakisfil")
     a href="vasilakisfil" Tweets
-  li.bottomBorder
+  li.bottomBorder id=('active' if request.path.eql? "/following")
     a href="following" Following
-  li.bottomBorder
+  li.bottomBorder id=('active' if request.path.eql? "/followers")
     a href="followers" Followers
-  li.bottomBorder
+  li.bottomBorder id=('active' if request.path.eql? "/favorites")
     a href="favorites" Favorites
   li
     a href="lists" Lists
