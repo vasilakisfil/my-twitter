@@ -3,22 +3,22 @@
     nav.top-bar data-topbar=""
       section.top-bar-section
         ul.left
-          li
-            a href="#"
-              span#home
+          li class=("active" if @home_page)
+            a href="/"
+              span.home id=('homeactive' if @home_page)
               span.font12.CBBB Home
-          li
-            a href="#"
-              span#connect
+          li class=("active" if @connect_page)
+            a href="connect"
+              span.connect id=('connectactive' if @connect_page)
               span.font12.CBBB Connect
-          li
-            a href="#"
-              span#discover
+          li class=("active" if @discover_page)
+            a href="discover"
+              span.discover id=('discoveractive' if @discover_page)
               span.font12.CBBB Discover
-          li.active
-            a href="#"
-              span#me
-              span.font12.CFFF Me
+          li class=("active" if @me_page)
+            a href="vasilakisfil"
+              span.me id=('meactive' if @me_page)
+              span.font12.CBBB Me
         #bird-topbar-center.left
             span#bird
         /! Right Nav Section

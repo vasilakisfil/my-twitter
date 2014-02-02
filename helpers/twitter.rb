@@ -1,5 +1,6 @@
 require 'twitter'
 require 'json'
+require 'httpclient'
 
 module TwitterHelper
 
@@ -45,6 +46,7 @@ module TwitterHelper
         friends_count: @client.user(username).friends_count,
         followers_count: @client.user(username).followers_count
       }
+      show_hash[:url] = final_url(show_hash[:url])
       File.open(@user_show_dir, 'w') {}
       File.open(@user_show_dir, 'w') do |f|
         f.write(show_hash.to_json)
@@ -67,6 +69,16 @@ module TwitterHelper
       File.open(@user_show_dir, 'w') {}
       File.open(@user_timeline_dir, 'w') {}
     end
+
+    private
+
+    def final_url(url)
+      httpc = HTTPClient.new
+      resp = httpc.head(url)
+      return resp.header['Location'][0]
+    end
+
+
 
   end
 

@@ -10,6 +10,7 @@ group :test do
   gem 'capybara'
 end
 
+gem 'httpclient'
 gem 'rack_csrf'
 gem 'encrypted_cookie'
 gem 'scrypt'

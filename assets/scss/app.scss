@@ -250,7 +250,7 @@ input[type="text"], textarea {
   }
 }
 
-#home {
+.home {
   width: 21px;
   height: 22px;
   display: inline-block;
@@ -260,7 +260,7 @@ input[type="text"], textarea {
   background-repeat: no-repeat;
 }
 
-#connect {
+.connect {
   width: 21px;
   height: 22px;
   display: inline-block;
@@ -270,7 +270,7 @@ input[type="text"], textarea {
   background-repeat: no-repeat;
 }
 
-#discover {
+.discover {
   width: 21px;
   height: 22px;
   display: inline-block;
@@ -280,15 +280,36 @@ input[type="text"], textarea {
   background-repeat: no-repeat;
 }
 
-#me {
+.me {
   width: 21px;
   height: 22px;
   display: inline-block;
   margin: -4px 6px 0 0;
   vertical-align: text-top;
+  background: image-url('twitter_web_sprite_icons.png') -120px -50px;
+  background-repeat: no-repeat;
+}
+
+#homeactive {
+  background: image-url('twitter_web_sprite_icons.png') 0px -110px;
+  background-repeat: no-repeat;
+}
+
+#connectactive {
+  background: image-url('twitter_web_sprite_icons.png') -80px -110px;
+  background-repeat: no-repeat;
+}
+
+#discoveractive {
+  background: image-url('twitter_web_sprite_icons.png') -40px -110px;
+  background-repeat: no-repeat;
+}
+
+#meactive {
   background: image-url('twitter_web_sprite_icons.png') -120px -110px;
   background-repeat: no-repeat;
 }
+
 
 #bird-topbar-center {
   margin-left: 50px;
@@ -647,6 +668,9 @@ input[type="text"], textarea {
       a {
         color: #fff;
       }
+    }
+    #url:hover {
+      text-decoration: underline;
     }
   }
 }

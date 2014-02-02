@@ -23,6 +23,7 @@ GEM
       ffi (>= 1.0.0)
       rake
     fssm (0.2.10)
+    httpclient (2.3.4.1)
     jsmin (1.0.1)
     json (1.8.1)
     mime-types (2.0)
@@ -90,6 +91,7 @@ DEPENDENCIES
   capybara
   compass
   encrypted_cookie
+  httpclient
   json
   rack_csrf
   rspec

@@ -73,12 +73,14 @@ module MyTwitter
     end
 
     get '/' do
+      @home_page = true
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :index
     end
 
     get '/vasilakisfil' do
+      @me_page = true
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :index
@@ -103,26 +105,43 @@ module MyTwitter
       redirect to('/')
     end
 
+    get '/connect' do
+      @connect_page = true
+      @user_timeline = @data_retriever.user_timeline
+      @user_show = @data_retriever.user_show
+      slim :index
+    end
+
+    get '/discover' do
+      @discover_page = true
+      @user_timeline = @data_retriever.user_timeline
+      @user_show = @data_retriever.user_show
+      slim :index
+    end
+
     get '/following' do
+      @following_page = true
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :following
     end
 
     get '/followers' do
+      @followers_page = true
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :following
     end
 
     get '/favorites' do
+      @favorites_page = true
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :following
     end
 
     get '/lists' do
-      session.clear
+      @lists_page = true
       @user_timeline = @data_retriever.user_timeline
       @user_show = @data_retriever.user_show
       slim :following
