@@ -64,8 +64,16 @@
                       input type="hidden" name="_method" value="DELETE"
                       button.my-button type="submit" Sign out
           li
-            a.button#tweet-btn  href="#"
+            a.button#tweet-btn  href="#" data-reveal-id="tweet-form"
               span#new-tweet
+            #tweet-form.reveal-modal data-reveal=""
+              form action="/tweet" method="POST"
+                .row
+                  .small-32.columns
+                    textarea#tweet-text
+                  .small-5.offset-27.columns
+                    button#tweet-btn2.tiny type="submit" disabled="" Tweet
+              a.close-reveal-modal &#215;
         /! Left Nav Section
 - else #if not signed in
   .contain-to-grid.fixed.navbar-bg

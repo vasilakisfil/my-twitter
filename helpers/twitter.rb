@@ -38,9 +38,9 @@ module TwitterHelper
         screen_name: @client.user(username).screen_name,
         name: @client.user(username).name,
         description: @client.user(username).description,
-        profile_image_url: @client.user(username).profile_image_url,
+        profile_image_url: @client.user(username).profile_image_url_https,
         profile_background_image_url:
-          @client.user(username).profile_background_image_url,
+          @client.user(username).profile_background_image_url_https,
         url: @client.user(username).url,
         statuses_count: @client.user(username).statuses_count,
         friends_count: @client.user(username).friends_count,

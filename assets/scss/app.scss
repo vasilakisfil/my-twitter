@@ -366,10 +366,26 @@ input[type="text"], textarea {
   margin: -3px;
 }
 
+#tweet-form {
+  width: 520px;
+  height: 202px;
+  margin-left: -20%;
+
+  textarea {
+    background-color: #fff;
+    width: 450px;
+    height: 136px;
+    margin-bottom: 1%;
+  }
+}
+
 #tweet-btn {
   border-radius: 5px;
 }
 
+#tweet-btn2 {
+  border-radius: 5px;
+}
 
 
 #search {
