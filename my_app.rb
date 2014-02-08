@@ -24,7 +24,7 @@ module MyTwitter
 
 
     yaml_config = YAML::load_file('config.yml')
-    @@screen_name = username = yaml_config['screen_name']
+    @@screen_name = @@username = yaml_config['screen_name']
 
 
     Thread.new do
@@ -94,7 +94,7 @@ module MyTwitter
         hashed_pass = yaml_config['password']['hash']
         pass = params[:password]
         new_hashed_pass = SCrypt::Engine.hash_secret(params[:password], salt, 512)
-        session[:user_authenticated] = screen_name if hashed_pass == new_hashed_pass
+        session[:user_authenticated] = @@screen_name if hashed_pass == new_hashed_pass
       end
       redirect to('/vasilakisfil')
     end
