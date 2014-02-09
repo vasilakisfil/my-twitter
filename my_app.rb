@@ -16,7 +16,6 @@ module MyTwitter
     set :slim, :pretty => true
     set :partial_template_engine, :slim
     #enable :sessions
-    #use Rack::Session::Cookie, {:http_only => true }
 
     helpers TwitterHelper
     helpers Sinatra::ViewHelpers
@@ -94,16 +93,10 @@ module MyTwitter
         hashed_pass = yaml_config['password']['hash']
         pass = params[:password]
         new_hashed_pass = SCrypt::Engine.hash_secret(params[:password], salt, 512)
-        session[:user_authenticated] = @@screen_name if hashed_pass == new_hashed_pass
+        session[:user_id] = @@screen_name if hashed_pass == new_hashed_pass
       end
       redirect to('/vasilakisfil')
     end
-
-    delete '/session' do
-      session.clear
-      redirect to('/')
-    end
-
 
     post '/tweet' do
       set_up = TwitterHelper::SetUp.new

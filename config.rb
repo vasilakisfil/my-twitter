@@ -32,30 +32,20 @@ module MyTwitter
     yaml_config = YAML::load_file('config.yml')
     Rack::Builder.app do
       cookie_settings = {
-        :key          => 'usr',
+        :key          => 'my-twitter',
         :path         => "/",
         :expire_after => 86400,             # In seconds, 1 day.
         :secret       => yaml_config["cookie_key"], # load this into the environment of the server
+        :secure       => true,
         :httponly     => true
       }
-      cookie_settings.merge!( :secure => true ) if ENV["RACK_ENV"] == "production"
-
-      # AES encryption of cookies
+      # AES encryption of session cookies
       use Rack::Session::EncryptedCookie, cookie_settings
+      #use Rack::Session::Cookie, cookie_settings
       use Rack::Csrf, raise: true
-
       # other stuff here
-
       run MyApp
     end
   end
 end
-
-
-
-
-
-
-
-
 
