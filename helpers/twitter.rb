@@ -8,17 +8,17 @@ module TwitterHelper
     attr_reader :username, :client
 
     def initialize
+      @yaml_config = YAML::load_file('config.yml')
       Twitter.configure do |config|
-        config.consumer_key        = "KgormCyO26dvrdUhooeMdw"
-        config.consumer_secret     = "We7NbbWoVpqLU0yX2cjaoqnbPUEnA2rl4wTXMO7Ilc4"
+        config.consumer_key        = @yaml_config['API_KEY']
+        config.consumer_secret     = @yaml_config['API_SECRET']
       end
     end
 
     def authenticate(username)
-      yaml_config = YAML::load_file('config.yml')
       @client = Twitter::Client.new(
-        :oauth_token        => yaml_config['oauth']['OAUTH_TOKEN'],
-        :oauth_token_secret => yaml_config['oauth']['OAUTH_TOKEN_SECRET']
+        :oauth_token        => @yaml_config['ACCESS_TOKEN'],
+        :oauth_token_secret => @yaml_config['ACCESS_TOKEN_SECRET']
       )
       @username = username
     end

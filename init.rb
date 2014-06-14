@@ -18,13 +18,13 @@ puts "SALT: #{salt}"
 puts "HASHED_PASS: #{hashed_pass}"
 
 config = YAML::load_file('config.yml')
-config['screen_name'] = screen_name
-config['password']['salt_size'] = 32
-config['password']['key_len'] = 512
-config['password']['salt'] = salt
-config['password']['hash'] = hashed_pass
+config['SCREEN_NAME'] = screen_name
+config['PASSWORD']['SALT_SIZE'] = 32
+config['PASSWORD']['KEY_LEN'] = 512
+config['PASSWORD']['SALT'] = salt
+config['PASSWORD']['HASH'] = hashed_pass
 # quietly update cookie secret token
-config['cookie_key'] = SecureRandom.hex(32)
+config['COOKIE_KEY'] = SecureRandom.hex(32)
 File.open('config.yml', 'w') {|f| f.write config.to_yaml }
 
 puts "Fetching the first data, it might take sometime"

@@ -35,7 +35,7 @@ module MyTwitter
         :key          => 'my-twitter',
         :path         => "/",
         :expire_after => 86400,             # In seconds, 1 day.
-        :secret       => yaml_config["cookie_key"], # load this into the environment of the server
+        :secret       => yaml_config["COOKIE_KEY"], # load this into the environment of the server
         :secure       => true,
         :httponly     => true
       }

@@ -23,8 +23,7 @@ module MyTwitter
 
 
     yaml_config = YAML::load_file('config.yml')
-    @@screen_name = @@username = yaml_config['screen_name']
-
+    @@screen_name = @@username = yaml_config['SCREEN_NAME']
 
     Thread.new do
       @set_up = TwitterHelper::SetUp.new
@@ -88,9 +87,9 @@ module MyTwitter
       if params[:_method] == "DELETE"
         session.clear
       else
-        key_len = yaml_config['password']['key_len']
-        salt = yaml_config['password']['salt']
-        hashed_pass = yaml_config['password']['hash']
+        key_len = yaml_config['PASSWORD']['KEY_LEN']
+        salt = yaml_config['PASSWORD']['SALT']
+        hashed_pass = yaml_config['PASSWORD']['HASH']
         pass = params[:password]
         new_hashed_pass = SCrypt::Engine.hash_secret(params[:password], salt, 512)
         session[:user_id] = @@screen_name if hashed_pass == new_hashed_pass
